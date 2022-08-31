@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.5.0)
+  - GoogleMaps (6.1.1):
+    - GoogleMaps/Maps (= 6.1.1)
+  - GoogleMaps/Base (6.1.1)
+  - GoogleMaps/Maps (6.1.1):
+    - GoogleMaps/Base
+  - Kingfisher (7.2.0)
+  - SpeechRecognizerButton (0.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - GoogleMaps
+  - Kingfisher
+  - SpeechRecognizerButton
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - GoogleMaps
+    - Kingfisher
+    - SpeechRecognizerButton
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  GoogleMaps: 94e6e0851beece6678af9f508f4918b7a7c61722
+  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
+  SpeechRecognizerButton: 335b079463dcdce9dfb345ba670559c57c14e344
+
+PODFILE CHECKSUM: a4764e9f4c657583ec4aae26e46569a84994d11a
+
+COCOAPODS: 1.11.3
