@@ -88,6 +88,7 @@ class VoiceRecognitionViewController: UIViewController {
             let nextVc = story.instantiateViewController(withIdentifier: "mapViewControllerAr") as! mapViewController
             nextVc.modalPresentationStyle = .fullScreen
             nextVc.pickedLocation = locationmodel
+            nextVc.message = self.label.text
             self.present(nextVc, animated: true)
         }
     }
@@ -159,6 +160,11 @@ class VoiceRecognitionViewController: UIViewController {
             return locationmodel
         }
         else if text.contains("المتاحف") {
+            self.label.text = text
+            flage = false
+            return nil
+        }
+        else if text.contains("نهر النيل") {
             self.label.text = text
             flage = true
             return nil
