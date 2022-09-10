@@ -251,7 +251,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="doW-CD-mhg">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="doW-CD-mhg">
                                         <rect key="frame" x="10" y="67" width="180" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المكان" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="QYF-gc-Jw1">
@@ -266,7 +266,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد السكان" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mK-E6-cLU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد السكان" textAlignment="right" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mK-E6-cLU">
                                                 <rect key="frame" x="0.0" y="60.666666666666636" width="180" height="20.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -343,10 +343,12 @@
                     <connections>
                         <outlet property="containerView" destination="O9A-L1-6tP" id="RCQ-HB-VMF"/>
                         <outlet property="gMap" destination="qXD-Ma-HAQ" id="ao9-Dx-3iE"/>
+                        <outlet property="nextButtton" destination="fQT-6j-KhI" id="B6e-ZE-6PU"/>
                         <outlet property="placeAreaLabel" destination="GXQ-33-R29" id="U02-6n-TLQ"/>
                         <outlet property="placeImageView" destination="61h-wD-B7c" id="lcH-ek-Lb0"/>
                         <outlet property="placeNameLabel" destination="QYF-gc-Jw1" id="yVy-Hg-Sz8"/>
                         <outlet property="placepopulationLabel" destination="8mK-E6-cLU" id="rPU-HG-QRD"/>
+                        <outlet property="prevButton" destination="vhT-Ii-VeR" id="EpW-u0-Bsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJh-tk-a5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

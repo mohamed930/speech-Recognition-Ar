@@ -96,7 +96,7 @@ class GoogleMapController {
     // ------------------------------------------------
     
     // MARK: TODO: This method for draw line.
-    func DrawLine(lati: Double,long: Double, zoom: Float ,view: UIView, location: [String], viewController: GMSMapViewDelegate) {
+    func DrawLine(lati: Double,long: Double, zoom: Float ,view: UIView, location: [String], routName: String , viewController: GMSMapViewDelegate) {
         
         setApiKEY()
         
@@ -117,7 +117,7 @@ class GoogleMapController {
         rectangle.strokeWidth = 2
         rectangle.strokeColor = .yellow
         rectangle.isTappable = true
-        rectangle.title = "Domiate"
+        rectangle.title = routName
         rectangle.map = mapView
         
         mapView?.frame = view.bounds

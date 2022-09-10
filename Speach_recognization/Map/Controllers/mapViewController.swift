@@ -18,6 +18,8 @@ class mapViewController: UIViewController {
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placepopulationLabel: UILabel!
     @IBOutlet weak var placeAreaLabel: UILabel!
+    @IBOutlet weak var nextButtton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
     
     var pickedLocation: locationModel?
     let tourimeplaces = touristPlacesAPI()
@@ -124,7 +126,7 @@ class mapViewController: UIViewController {
     }
     
     func ShowLine() {
-        googlemap.DrawLine(lati: 27.0, long: 30.0, zoom: 5, view: gMap, location: DomiatLine, viewController: self)
+        googlemap.DrawLine(lati: 27.0, long: 30.0, zoom: 6.5, view: gMap, location: DomiatLine, routName: "Domiate", viewController: self)
     }
     
 }
@@ -175,7 +177,15 @@ extension mapViewController: GMSMapViewDelegate {
     
     
     func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
-        print("F: \(overlay.title!)")
+        nextButtton.isHidden = true
+        prevButton.isHidden = true
+        if overlay.title == "Domiate" {
+            containerView.isHidden = false
+            placeImageView.image = UIImage(named: "domiate")
+            placeNameLabel.text = "اسم المكان: فرع دمياط"
+            placeAreaLabel.text = "مساحه المكان: ٢٤٠ كم٢"
+            placepopulationLabel.text = "سمي بفرع دمياط لأن آخر المدن المصرية التي كان يمر بها قديمًا هي دمياط"
+        }
     }
     
 }
