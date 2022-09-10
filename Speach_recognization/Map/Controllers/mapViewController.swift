@@ -126,7 +126,7 @@ class mapViewController: UIViewController {
     }
     
     func ShowLine() {
-        googlemap.DrawLine(lati: 27.0, long: 30.0, zoom: 6.5, view: gMap, location: [DomiatLine,rashidLine], routName: ["Domiate","rashid"] , rootColor: [.yellow,.red], viewController: self)
+        googlemap.DrawLine(lati: 27.0, long: 30.0, zoom: 6.5, view: gMap, location: [DomiatLine,rashidLine,nileBeforeNaser], routName: ["Domiate","rashid","NileBeforeNaser"] , rootColor: [.yellow,.red,.green], viewController: self)
     }
     
 }
@@ -192,6 +192,13 @@ extension mapViewController: GMSMapViewDelegate {
             placeNameLabel.text = "اسم المكان: فرع رشيد"
             placeAreaLabel.text = "مساحه المكان: ٢٤٠ كم٢"
             placepopulationLabel.text = "أحد فرعي نهر النيل، في مصر السفلى، والحد الغربي للدلتا قبل أن يصب النهر في البحر الأبيض المتوسط."
+        }
+        else if overlay.title == "NileBeforeNaser" {
+            containerView.isHidden = false
+            placeImageView.image = UIImage(named: "nile")
+            placeNameLabel.text = "اسم المكان: نهر النيل ماقبل بحيره ناصر"
+            placeAreaLabel.text = "مساحه المكان: ٤٧٩ كم٢"
+            placepopulationLabel.text = "اصبحت المنطقه امنه بفضل وجود سد العالى الذي يخزن ٧٥٪ من مياه الفيضان ورائه"
         }
     }
     
