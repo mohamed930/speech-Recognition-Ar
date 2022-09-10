@@ -126,7 +126,7 @@ class mapViewController: UIViewController {
     }
     
     func ShowLine() {
-        googlemap.DrawLine(lati: 27.0, long: 30.0, zoom: 6.5, view: gMap, location: DomiatLine, routName: "Domiate", viewController: self)
+        googlemap.DrawLine(lati: 27.0, long: 30.0, zoom: 6.5, view: gMap, location: [DomiatLine,rashidLine], routName: ["Domiate","rashid"] , rootColor: [.yellow,.red], viewController: self)
     }
     
 }
@@ -185,6 +185,13 @@ extension mapViewController: GMSMapViewDelegate {
             placeNameLabel.text = "اسم المكان: فرع دمياط"
             placeAreaLabel.text = "مساحه المكان: ٢٤٠ كم٢"
             placepopulationLabel.text = "سمي بفرع دمياط لأن آخر المدن المصرية التي كان يمر بها قديمًا هي دمياط"
+        }
+        else if overlay.title == "rashid" {
+            containerView.isHidden = false
+            placeImageView.image = UIImage(named: "rahsid")
+            placeNameLabel.text = "اسم المكان: فرع رشيد"
+            placeAreaLabel.text = "مساحه المكان: ٢٤٠ كم٢"
+            placepopulationLabel.text = "أحد فرعي نهر النيل، في مصر السفلى، والحد الغربي للدلتا قبل أن يصب النهر في البحر الأبيض المتوسط."
         }
     }
     

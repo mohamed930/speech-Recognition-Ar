@@ -96,7 +96,7 @@ class GoogleMapController {
     // ------------------------------------------------
     
     // MARK: TODO: This method for draw line.
-    func DrawLine(lati: Double,long: Double, zoom: Float ,view: UIView, location: [String], routName: String , viewController: GMSMapViewDelegate) {
+    func DrawLine(lati: Double,long: Double, zoom: Float ,view: UIView, location: [[String]], routName: [String] , rootColor: [UIColor] , viewController: GMSMapViewDelegate) {
         
         setApiKEY()
         
@@ -104,21 +104,24 @@ class GoogleMapController {
         camera = GMSCameraPosition.camera(withLatitude: lati, longitude: long, zoom: zoom)
         mapView = GMSMapView.map(withFrame: view.frame, camera: camera!)
         
-        let path = GMSMutablePath()
+        var x = 0
         
         for i in location {
-            let location = i.split(separator: ",")
-            let lati = location[0]
-            let long = location[1]
-            path.add(CLLocationCoordinate2D(latitude: Double(lati)!, longitude: Double(long)!))
+            let path = GMSMutablePath()
+            for j in i {
+                let location = j.split(separator: ",")
+                let lati = location[0]
+                let long = location[1]
+                path.add(CLLocationCoordinate2D(latitude: Double(lati)!, longitude: Double(long)!))
+            }
+            let rectangle = GMSPolyline(path: path)
+            rectangle.strokeWidth = 2
+            rectangle.strokeColor = rootColor[x]
+            rectangle.isTappable = true
+            rectangle.title = routName[x]
+            rectangle.map = mapView
+            x += 1
         }
-        
-        let rectangle = GMSPolyline(path: path)
-        rectangle.strokeWidth = 2
-        rectangle.strokeColor = .yellow
-        rectangle.isTappable = true
-        rectangle.title = routName
-        rectangle.map = mapView
         
         mapView?.frame = view.bounds
         mapView!.mapType = .satellite
